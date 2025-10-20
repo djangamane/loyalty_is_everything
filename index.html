@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="bi_favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loyalty Is Everything | Blannon Campbell</title>
+<meta name="description" content='Blannon "B.I." Campbell connects elite talent across sports, music, and tech. Discover his strategic ventures, partnerships, and booking details.'>
+<meta property="og:title" content="Loyalty Is Everything | Blannon Campbell">
+<meta property="og:description" content='Trusted right hand to the stars. Explore how Blannon "B.I." Campbell builds iconic moments for champions and legends.'>
+<meta property="og:type" content="website">
+<meta property="og:image" content="bi_1.png">
+<meta name="theme-color" content="#000000">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+        :root {
+            --color-bg: #04090F;
+            --color-bg-soft: rgba(12, 22, 33, 0.85);
+            --color-text: #F5F7FA;
+            --color-text-muted: #9AA7BC;
+            --color-accent: #E05243;
+            --color-accent-soft: #F17C5D;
+            --color-accent-dark: #AA3A2E;
+            --color-surface: rgba(12, 22, 33, 0.85);
+            --color-surface-strong: rgba(12, 22, 33, 0.95);
+            --color-border: rgba(255, 255, 255, 0.08);
+            --color-border-strong: rgba(224, 82, 67, 0.35);
+        }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-montserrat { font-family: 'Montserrat', sans-serif; }
+        .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .hover-scale { transition: transform 0.3s ease; }
+        .hover-scale:hover { transform: scale(1.05); }
+        .gold-gradient { background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-soft) 100%); }
+        .gold-text { color: var(--color-accent); }
+        .gold-border { border-color: var(--color-accent); }
+        .surface-panel {
+            background: var(--color-surface-strong);
+            backdrop-filter: blur(12px);
+        }
+        .surface-panel-soft {
+            background: var(--color-surface);
+            backdrop-filter: blur(10px);
+        }
+        .border-gray-800,
+        .border-gray-700 {
+            border-color: var(--color-border) !important;
+        }
+        .text-gray-200,
+        .text-gray-300 {
+            color: var(--color-text) !important;
+            opacity: 0.92;
+        }
+        .text-gray-400 {
+            color: var(--color-text-muted) !important;
+        }
+        .text-gray-500 {
+            color: rgba(154, 167, 188, 0.7) !important;
+        }
+        .bg-gray-900 {
+            background-color: rgba(8, 15, 24, 0.85) !important;
+        }
+        .hero-section {
+            background-color: var(--color-bg);
+            overflow: hidden;
+        }
+        .hero-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(4,9,15,0.9) 10%, rgba(4,9,15,0.65) 55%, rgba(4,9,15,0.95) 100%),
+                        radial-gradient(circle at top center, rgba(224,82,67,0.35) 0%, transparent 55%);
+            z-index: 1;
+            pointer-events: none;
+        }
+        .hero-badge {
+            background: rgba(4, 9, 15, 0.7);
+            backdrop-filter: blur(6px);
+        }
+        .gallery-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            border-radius: 0.75rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-card:hover::after {
+            opacity: 1;
+        }
+        @media (max-width: 767px) {
+            .hero-overlay {
+                background: linear-gradient(180deg, rgba(4,9,15,0.92) 0%, rgba(4,9,15,0.7) 50%, rgba(4,9,15,0.95) 100%);
+            }
+        }
+    </style>
+</head>
+<body class="text-white font-montserrat" style="background-color: var(--color-bg); color: var(--color-text);">
+<!-- Vanta.js Background -->
+<div class="fixed inset-0 z-0 opacity-70" id="vanta-bg"></div>
+<!-- Navigation -->
+<nav class="fixed w-full z-50 surface-panel">
+<div class="container mx-auto px-6 py-4 flex justify-between items-center relative">
+<a class="text-2xl font-playfair gold-text tracking-widest" href="#">L.I.E</a>
+<div class="hidden md:flex md:items-center space-y-4 md:space-y-0 md:space-x-8 absolute top-full left-0 right-0 md:static surface-panel-soft md:bg-transparent px-6 md:px-0 py-4 md:py-0 flex-col md:flex-row border-t border-gray-800 md:border-0" id="nav-links">
+<a class="hover:gold-text transition-colors uppercase tracking-wide text-sm" href="#about">About</a>
+<a class="hover:gold-text transition-colors uppercase tracking-wide text-sm" href="#ventures">Ventures</a>
+<a class="hover:gold-text transition-colors uppercase tracking-wide text-sm" href="#highlights">Highlights</a>
+<a class="hover:gold-text transition-colors uppercase tracking-wide text-sm" href="#moments">Moments</a>
+<a class="hover:gold-text transition-colors uppercase tracking-wide text-sm" href="#testimonials">Testimonials</a>
+<a class="hover:gold-text transition-colors uppercase tracking-wide text-sm" href="#contact">Contact</a>
+</div>
+<button class="md:hidden" id="nav-toggle">
+<i data-feather="menu"></i>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center z-10 hero-section">
+<video autoplay="" class="hero-video" loop="" muted="" playsinline="" poster="bi_1.png" src="san_fran.mp4"></video>
+<div class="absolute inset-0 hero-overlay"></div>
+<div class="container mx-auto px-6 text-center z-20">
+<div class="inline-flex items-center gap-3 px-4 py-2 rounded-full hero-badge mb-6 border border-gray-800">
+<span class="uppercase tracking-[0.3em] text-xs text-gray-300">Blannon "B.I." Campbell</span>
+<span class="w-2 h-2 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#F9D423]"></span>
+<span class="text-xs text-gray-400">Loyalty Is Everything</span>
+</div>
+<h1 class="text-4xl md:text-7xl font-playfair mb-6 text-shadow gold-text">The Insider Who Makes Iconic Moments Happen</h1>
+<p class="text-lg md:text-2xl mb-10 max-w-3xl mx-auto text-gray-200">From championship parades with the Golden State Warriors to unforgettable nights with Ghostface Killah, B.I. is the connector trusted by legends. When the stakes are high, he's the one they call.</p>
+<div class="flex flex-wrap gap-4 justify-center">
+<div class="relative inline-block group">
+<a class="px-8 py-3 border-2 gold-border text-white hover:bg-gradient-to-r from-black to-black transition-all duration-300 inline-flex items-center uppercase tracking-wide text-sm" href="#about">
+<span>Discover The Ethos</span>
+<i class="ml-2" data-feather="arrow-down"></i>
+</a>
+<div class="absolute -bottom-1 left-0 w-full h-1 gold-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<a class="px-8 py-3 gold-gradient text-white font-semibold uppercase tracking-wide hover-scale transition-all text-sm shadow-lg shadow-[rgba(224,82,67,0.35)]" href="#contact">Work With B.I.</a>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+<i class="gold-text" data-feather="chevron-down"></i>
+</div>
+</section>
+<!-- About Section -->
+<section class="relative py-20 z-10 surface-panel-soft" id="about">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+<img alt="Blannon Campbell with NBA champions" class="w-full h-auto rounded-lg shadow-xl hover-scale border border-gray-800" src="bi_2.png"/>
+</div>
+<div class="md:w-1/2">
+<h2 class="text-3xl md:text-5xl font-playfair mb-6 gold-text">The Loyalty Ethos</h2>
+<p class="mb-4 text-lg text-gray-200">From Flint, Michigan to the national stage, Blannon "B.I." Campbell built his reputation on one unbreakable code: <span class="gold-text font-semibold">Loyalty Is Everything</span>.</p>
+<p class="mb-4 text-lg text-gray-300">He is the trusted personal point of contact for champions and icons—including Draymond Green, Ghostface Killah, and the inner circle surrounding LeBron James. Whether it is moving with the Warriors during a title run or mapping an artist's comeback, B.I. keeps doors open and moments unforgettable.</p>
+<p class="text-lg text-gray-300">Every introduction is intentional, every experience curated. If you need someone who can operate at the speed of culture while honoring every relationship, you need B.I.</p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
+<div class="surface-panel p-4 rounded-lg border border-gray-800 text-center">
+<p class="text-3xl font-playfair gold-text mb-1">15+</p>
+<p class="text-xs uppercase tracking-wide text-gray-400">Years connecting sports &amp; music</p>
+</div>
+<div class="surface-panel p-4 rounded-lg border border-gray-800 text-center">
+<p class="text-3xl font-playfair gold-text mb-1">Champions</p>
+<p class="text-xs uppercase tracking-wide text-gray-400">Trusted by NBA &amp; NFL greats</p>
+</div>
+<div class="surface-panel p-4 rounded-lg border border-gray-800 text-center">
+<p class="text-3xl font-playfair gold-text mb-1">Culture</p>
+<p class="text-xs uppercase tracking-wide text-gray-400">Grounded in authenticity</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Ventures Section -->
+<section class="relative py-20 z-10" id="ventures">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl md:text-5xl font-playfair mb-16 text-center gold-text">Strategic Ventures</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Venture 1 -->
+<div class="surface-panel-soft p-8 rounded-lg border border-gray-800 hover:gold-border transition-all hover-scale">
+<div class="text-4xl gold-text mb-4">
+<i data-feather="dollar-sign"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3 uppercase tracking-wide">Athlete Investments</h3>
+<p class="text-gray-300">Blueprinting brand extensions, private equity deals, and curated experiences that outlive playing careers. Every move is aligned with legacy.</p>
+</div>
+<!-- Venture 2 -->
+<div class="surface-panel-soft p-8 rounded-lg border border-gray-800 hover:gold-border transition-all hover-scale">
+<div class="text-4xl gold-text mb-4">
+<i data-feather="music"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3 uppercase tracking-wide">Artist Management</h3>
+<p class="text-gray-300">From studio sessions to rollouts, B.I. builds teams, secures collaborations, and keeps artists in rooms that matter. Loyalty first, paperwork second.</p>
+</div>
+<!-- Venture 3 -->
+<div class="surface-panel-soft p-8 rounded-lg border border-gray-800 hover:gold-border transition-all hover-scale">
+<div class="text-4xl gold-text mb-4">
+<i data-feather="cpu"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3 uppercase tracking-wide">Tech Partnerships</h3>
+<p class="text-gray-300">Connecting startups and elite talent for launches, events, and equity plays. Authentic storytelling meets emerging platforms.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Highlights Section -->
+<section class="relative py-20 bg-black bg-opacity-90 z-10" id="highlights">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl md:text-5xl font-playfair mb-12 text-center gold-text">Trusted Across The Spotlight</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="surface-panel-soft rounded-xl border border-gray-800 p-8 hover:gold-border transition-all hover-scale">
+<div class="text-sm uppercase tracking-[0.4em] text-gray-500 mb-4">NBA</div>
+<h3 class="text-2xl font-playfair mb-3 gold-text">Draymond Green</h3>
+<p class="text-gray-300 text-sm leading-relaxed">Day-to-day consigliere during championship runs—coordinating appearances, managing brand activations, and protecting the inner circle.</p>
+</div>
+<div class="surface-panel-soft rounded-xl border border-gray-800 p-8 hover:gold-border transition-all hover-scale">
+<div class="text-sm uppercase tracking-[0.4em] text-gray-500 mb-4">Wu-Tang Clan</div>
+<h3 class="text-2xl font-playfair mb-3 gold-text">Ghostface Killah</h3>
+<p class="text-gray-300 text-sm leading-relaxed">Architect of headline shows and luxury hospitality touchpoints—ensuring fans, partners, and family experience the legend up close.</p>
+</div>
+<div class="surface-panel-soft rounded-xl border border-gray-800 p-8 hover:gold-border transition-all hover-scale">
+<div class="text-sm uppercase tracking-[0.4em] text-gray-500 mb-4">Culture</div>
+<h3 class="text-2xl font-playfair mb-3 gold-text">LeBron &amp; Friends</h3>
+<p class="text-gray-300 text-sm leading-relaxed">Part of the trusted network that navigates VIP logistics, charity moments, and private celebrations for basketball's most influential circle.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Moments Section -->
+<section class="relative py-20 z-10" id="moments">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl md:text-5xl font-playfair mb-12 text-center gold-text">Signature Moments</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="relative overflow-hidden rounded-xl gallery-card">
+<img alt="Blannon Campbell celebrating with Stephen Curry" class="w-full h-full object-cover" src="steph_bi.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<p class="uppercase text-xs tracking-[0.3em] text-gray-400 mb-1">Champions Club</p>
+<p class="font-semibold text-white text-lg">NBA Finals Celebration with Stephen Curry</p>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl gallery-card">
+<img alt="Blannon Campbell with Draymond Green" class="w-full h-full object-cover" src="draymond_bi.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<p class="uppercase text-xs tracking-[0.3em] text-gray-400 mb-1">Inner Circle</p>
+<p class="font-semibold text-white text-lg">Strategizing with Draymond Green</p>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl gallery-card">
+<img alt="Blannon Campbell hosting a luxury event" class="w-full h-full object-cover" src="bi_3.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<p class="uppercase text-xs tracking-[0.3em] text-gray-400 mb-1">Culture &amp; Lifestyle</p>
+<p class="font-semibold text-white text-lg">Curating VIP Experiences Coast to Coast</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="relative py-20 z-10 surface-panel-soft" id="testimonials">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl md:text-5xl font-playfair mb-16 text-center gold-text">Trusted By</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+<div class="surface-panel-soft border border-gray-800 rounded-lg p-6 text-center">
+<p class="uppercase text-xs tracking-[0.3em] text-gray-500 mb-3">Golden State Warriors</p>
+<p class="text-lg italic text-gray-200 mb-4">"B.I. anticipates what our guys need before they ask for it. He protects the room and keeps the celebrations tight."</p>
+<p class="gold-text text-sm">— Team Operations Lead</p>
+</div>
+<div class="surface-panel-soft border border-gray-800 rounded-lg p-6 text-center">
+<p class="uppercase text-xs tracking-[0.3em] text-gray-500 mb-3">Hip-Hop Royalty</p>
+<p class="text-lg italic text-gray-200 mb-4">"Loyalty isn't a slogan with B.I.—it's his playbook. He understands the business and the family behind it."</p>
+<p class="gold-text text-sm">— Artist Management Partner</p>
+</div>
+<div class="surface-panel-soft border border-gray-800 rounded-lg p-6 text-center">
+<p class="uppercase text-xs tracking-[0.3em] text-gray-500 mb-3">Emerging Startups</p>
+<p class="text-lg italic text-gray-200 mb-4">"When we activate with B.I., the room is filled with the right people. He bridges culture and innovation instantly."</p>
+<p class="gold-text text-sm">— Tech Founder</p>
+</div>
+</div>
+<div class="max-w-4xl mx-auto">
+<div class="border-l-4 gold-border pl-6 py-4 mb-8">
+<p class="text-xl italic mb-4">"Working with Blannon is like having a secret weapon. His ability to connect people and create opportunities through genuine relationships is unmatched in our industry."</p>
+<p class="gold-text">— NBA Team Executive</p>
+</div>
+<div class="border-l-4 gold-border pl-6 py-4">
+<p class="text-xl italic mb-4">"In an era where everyone is transactional, Blannon operates differently. When he says 'Loyalty Is Everything,' he lives it—making him the rarest kind of partner in this business."</p>
+<p class="gold-text">— Music Industry Veteran</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="relative py-20 z-10 surface-panel-soft" id="contact">
+<div class="container mx-auto px-6 max-w-4xl">
+<h2 class="text-3xl md:text-5xl font-playfair mb-16 text-center gold-text">Connect</h2>
+<div class="surface-panel-soft p-8 md:p-12 rounded-lg border border-gray-800">
+<p class="text-center mb-8 text-lg">For strategic inquiries and partnership opportunities, reach out through your preferred channel.</p>
+<div class="flex flex-wrap justify-center gap-6 mb-12">
+<a aria-label="Email B.I." class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:gold-border hover-scale transition-all" href="mailto:connect@loyaltyiseverything.com">
+<i class="gold-text" data-feather="mail"></i>
+</a>
+<a aria-label="LinkedIn profile" class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:gold-border hover-scale transition-all" href="https://www.linkedin.com" rel="noopener noreferrer" target="_blank">
+<i class="gold-text" data-feather="linkedin"></i>
+</a>
+<a aria-label="Twitter profile" class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:gold-border hover-scale transition-all" href="https://twitter.com" rel="noopener noreferrer" target="_blank">
+<i class="gold-text" data-feather="twitter"></i>
+</a>
+<a aria-label="Instagram profile" class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:gold-border hover-scale transition-all" href="https://www.instagram.com/loyaltyiseverything810/" rel="noopener noreferrer" target="_blank">
+<i class="gold-text" data-feather="instagram"></i>
+</a>
+</div>
+<form class="space-y-6">
+<div>
+<label class="block mb-2" for="name">Name</label>
+<input class="w-full bg-gray-900 border border-gray-800 rounded px-4 py-3 focus:outline-none focus:gold-border" id="name" type="text"/>
+</div>
+<div>
+<label class="block mb-2" for="email">Email</label>
+<input class="w-full bg-gray-900 border border-gray-800 rounded px-4 py-3 focus:outline-none focus:gold-border" id="email" type="email"/>
+</div>
+<div>
+<label class="block mb-2" for="message">Message</label>
+<textarea class="w-full bg-gray-900 border border-gray-800 rounded px-4 py-3 focus:outline-none focus:gold-border" id="message" rows="5"></textarea>
+</div>
+<button class="gold-gradient text-black px-8 py-3 rounded font-semibold hover:opacity-90 transition-opacity" type="submit">Send Message</button>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="relative py-8 border-t border-gray-800 z-10">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<p class="text-sm text-gray-500">© 2024 Loyalty Is Everything. All rights reserved.</p>
+</div>
+<div>
+<p class="text-sm gold-text font-playfair">L.I.E</p>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Initialize Vanta.js
+        VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0xd4af37,
+            backgroundColor: 0x0,
+            points: 12.00,
+            maxDistance: 22.00,
+            spacing: 18.00
+        });
+
+
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Mobile navigation toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('hidden');
+                navLinks.classList.toggle('flex');
+            });
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.add('hidden');
+                    navLinks.classList.remove('flex');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
