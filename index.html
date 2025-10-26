@@ -127,8 +127,8 @@
 </div>
 </nav>
 <!-- Hero Section -->
-<section class="relative min-h-screen flex items-center justify-center z-10 hero-section">
-<video autoplay="" class="hero-video" loop="" muted="" playsinline="" poster="bi_1.png" src="san_fran.mp4"></video>
+    <section class="relative min-h-screen flex items-center justify-center z-10 hero-section">
+        <video autoplay="" class="hero-video" loop="" muted="" playsinline="" preload="auto" src="san_fran.mp4"></video>
 <div class="absolute inset-0 hero-overlay"></div>
 <div class="container mx-auto px-6 text-center z-20">
 <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full hero-badge mb-6 border border-gray-800">
@@ -390,6 +390,22 @@
                     navLinks.classList.add('hidden');
                     navLinks.classList.remove('flex');
                 });
+            });
+        }
+
+        // Ensure hero video attempts playback on devices that block auto-play
+        const heroVideo = document.querySelector('.hero-video');
+        if (heroVideo && heroVideo.paused) {
+            const attemptPlay = () => heroVideo.play().catch(() => {});
+            if (document.readyState === 'complete') {
+                attemptPlay();
+            } else {
+                window.addEventListener('load', attemptPlay);
+            }
+            document.addEventListener('visibilitychange', () => {
+                if (!document.hidden) {
+                    attemptPlay();
+                }
             });
         }
     </script>
