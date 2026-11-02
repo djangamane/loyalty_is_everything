@@ -344,7 +344,7 @@
 <i class="gold-text" data-feather="instagram"></i>
 </a>
 </div>
-<form class="space-y-6" data-webhook="https://hook.us2.make.com/cqvkivq4e441ty4q7s5n44vlp3na9lxr" id="contact-form">
+<form class="space-y-6" data-webhook="https://formsubmit.co/ajax/blannon@blannoncampbell.com" id="contact-form">
 <div>
 <label class="block mb-2" for="name">Name</label>
 <input class="w-full bg-gray-900 border border-gray-800 rounded px-4 py-3 focus:outline-none focus:gold-border" id="name" name="name" placeholder="Your name" required type="text"/>
@@ -444,7 +444,8 @@
                     name: contactForm.name.value.trim(),
                     email: contactForm.email.value.trim(),
                     message: contactForm.message.value.trim(),
-                    submittedAt: new Date().toISOString()
+                    _subject: 'New message from blannoncampbell.com',
+                    _template: 'table'
                 };
 
                 formStatus.classList.remove('hidden', 'text-green-400', 'text-red-400', 'text-gray-300');
@@ -456,7 +457,7 @@
                 }
 
                 if (!webhookUrl || webhookUrl.includes('REPLACE_WITH_WEBHOOK')) {
-                    formStatus.textContent = 'Add your Make webhook URL to the form to activate message routing.';
+                    formStatus.textContent = 'Add your form endpoint URL to the form to activate message routing.';
                     formStatus.classList.add('text-red-400');
                     return;
                 }
@@ -471,7 +472,7 @@
 
                     const response = await fetch(webhookUrl, {
                         method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
+                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                         body: JSON.stringify(payload)
                     });
 
