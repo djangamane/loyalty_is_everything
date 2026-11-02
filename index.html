@@ -470,14 +470,32 @@
                     formStatus.textContent = 'Sending...';
                     formStatus.classList.add('text-gray-300');
 
-                    const response = await fetch(webhookUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
+                    // FormData keeps this a simple CORS request (no preflight round trip)
+                    const formData = new FormData();
+                    Object.entries(payload).forEach(([key, value]) => formData.append(key, value));
 
-                    if (!response.ok) {
-                        throw new Error('Webhook returned an error');
+                    const controller = new AbortController();
+                    const slowNotice = setTimeout(() => {
+                        formStatus.textContent = 'Still sending, this can take up to a minute...';
+                    }, 8000);
+                    const timeout = setTimeout(() => controller.abort(), 90000);
+
+                    let response;
+                    try {
+                        response = await fetch(webhookUrl, {
+                            method: 'POST',
+                            headers: { 'Accept': 'application/json' },
+                            body: formData,
+                            signal: controller.signal
+                        });
+                    } finally {
+                        clearTimeout(slowNotice);
+                        clearTimeout(timeout);
+                    }
+
+                    const result = await response.json().catch(() => ({}));
+                    if (!response.ok || String(result.success) !== 'true') {
+                        throw new Error(result.message || 'Form endpoint returned an error');
                     }
 
                     formStatus.textContent = 'Message sent. Expect a reply from Blannon soon.';
